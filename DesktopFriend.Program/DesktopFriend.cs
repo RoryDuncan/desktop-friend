@@ -1,4 +1,5 @@
 ﻿using System.IO;
+using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
@@ -19,11 +20,20 @@ public class DesktopFriend : Game
         _graphics = new GraphicsDeviceManager(this);
         Content.RootDirectory = "Content";
         IsMouseVisible = false;
+
     }
 
     protected override void Initialize()
     {
-        _spriteBatch = new SpriteBatch(_graphics.GraphicsDevice);
+        var services = new ServiceCollection();
+
+        services.AddSingleton(GraphicsDevice); // _graphics establishes GraphicsDevice
+        services.AddSingleton<SpriteBatch>();
+        services.AddSingleton(Content);
+
+        var serviceProvider = services.BuildServiceProvider();
+
+        _spriteBatch = serviceProvider.GetService<SpriteBatch>();
         // TODO: Add your initialization logic here
         ballPosition = new Vector2(_graphics.PreferredBackBufferWidth / 2, _graphics.PreferredBackBufferHeight / 2);
         base.Initialize();
