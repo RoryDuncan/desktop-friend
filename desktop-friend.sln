@@ -2,7 +2,7 @@
 # Visual Studio Version 17
 VisualStudioVersion = 17.5.2.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "desktop-friend", "DesktopFriend.Program\DesktopFriend.Program.csproj", "{D42E6AA4-675A-4115-8B76-59E97C0782F2}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DesktopFriend.Program", "DesktopFriend.Program\DesktopFriend.Program.csproj", "{D42E6AA4-675A-4115-8B76-59E97C0782F2}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DesktopFriend.Core", "DesktopFriend.Core\DesktopFriend.Core.csproj", "{A00F3C8B-42F8-471B-B729-1F3D84738BFD}"
 EndProject

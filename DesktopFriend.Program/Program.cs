@@ -1,2 +1,2 @@
-﻿using var game = new desktop_friend.DesktopFriend();
+﻿using var game = new DesktopFriend.Program.DesktopFriend();
 game.Run();
